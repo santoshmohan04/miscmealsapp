@@ -1,0 +1,18 @@
+<header class="header">
+    <div class="image">
+      <img [src]="meal.image" [alt]="meal.title" fill />
+    </div>
+    <div class="headerText">
+      <h1>{{meal.title}}</h1>
+      <p class="creator">
+        by <a href="mailto:{{meal.creator_email}}">{{meal.creator}}</a>
+      </p>
+      <p class="summary">{{meal.summary}}</p>
+    </div>
+  </header>
+  <main>
+    <p
+      class="instructions"
+      [innerHTML]="meal.instructions"
+    ></p>
+  </main>

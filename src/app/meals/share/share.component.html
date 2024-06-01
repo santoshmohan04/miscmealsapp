@@ -1,0 +1,73 @@
+<header class="header">
+    <h1>
+      Share your <span class="highlight">favorite meal</span>
+    </h1>
+    <p>Or any other meal you feel needs sharing!</p>
+  </header>
+  <main class="main">
+    <form class="form" [formGroup]="sharemealForm" (ngSubmit)="shareMeal(sharemealForm)">
+      <div class="row">
+        <p>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" formControlName="name" />
+        </p>
+        <p>
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" formControlName="email" />
+        </p>
+      </div>
+      <p>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" formControlName="title" />
+      </p>
+      <p>
+        <label for="summary">Short Summary</label>
+        <input type="text" id="summary" name="summary" formControlName="summary" />
+      </p>
+      <p>
+        <label for="instructions">Instructions</label>
+        <textarea
+          id="instructions"
+          name="instructions"
+          rows="10"
+          formControlName="instructions"
+        ></textarea>
+      </p>
+      <div class="picker">
+        <label for="image">Your image</label>
+        <div class="controls">
+          <div class="preview">
+           @if (pickedImage) {
+            <img
+                [src]="pickedImage"
+                alt="The image selected by the user."
+              />
+           } @else {
+            <p>No image picked yet.</p>
+           }
+          </div>
+          <input
+            class="input"
+            type="file"
+            id="image"
+            accept="image/png, image/jpeg"
+           (change)="handleImageChange($event)"
+           #fileinp
+          />
+          <button
+            class="button"
+            type="button"
+            (click)="fileinp.click()"
+          >
+            Pick an Image
+          </button>
+        </div>
+      </div>
+      <p *ngIf="errorMsg">{{errorMsg}}</p>
+      <p class="actions">
+        <button type="submit" [disabled]="sharemealForm.invalid || !pickedImage">
+            Share Meal
+        </button>
+      </p>
+    </form>
+  </main>

@@ -1,0 +1,9 @@
+<div class="slideshow">
+    @for (item of images; track $index) {
+        <img
+        [src]="item.image"
+        [alt]="item.alt"
+        [ngClass]="$index === currentImageIndex ? 'active' : ''"
+      />
+    }
+</div>

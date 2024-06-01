@@ -1,0 +1,43 @@
+<header class="header">
+    <h1>
+      Delicious meals, created
+      <span class="highlight"> by you</span>
+    </h1>
+    <p>
+      Choose your favorite recipe and cook it yourself. It is easy and fun!
+    </p>
+    <p class="cta">
+      <a routerLink="/meals/share">Share Your Favorite Recipe</a>
+    </p>
+  </header>
+  <main class="main">
+    <ng-container [ngTemplateOutlet]="displayTemplate()"></ng-container>
+    <ng-template #loading>
+        <p class="loading">Fetching meals...</p>
+    </ng-template>
+    <ng-template #mealslist>
+        <ul class="meals">
+            @for (item of meals; track $index) {
+              <li>
+                <article class="meal">
+                    <header>
+                      <div class="image">
+                        <img [src]="item.image" [alt]="item.title"/>
+                      </div>
+                      <div class="headerText">
+                        <h2>{{item.title}}</h2>
+                        <p>by {{item.creator}}</p>
+                      </div>
+                    </header>
+                    <div class="content">
+                      <p class="summary">{{item.summary}}</p>
+                      <div class="actions">
+                        <a [routerLink]="[item.slug]">View Details</a>
+                      </div>
+                    </div>
+                  </article>
+              </li>
+            }
+          </ul>
+    </ng-template>
+  </main>
