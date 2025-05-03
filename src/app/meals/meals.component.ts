@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 import { mealsdata } from '../mealsdata';
 
 @Component({
-  selector: 'app-meals',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './meals.component.html',
-  styleUrl: './meals.component.scss'
+    selector: 'app-meals',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './meals.component.html',
+    styleUrl: './meals.component.scss'
 })
 export class MealsComponent implements OnInit, AfterViewInit {
 

@@ -3,11 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { mealsdata } from '../../mealsdata';
 
 @Component({
-  selector: 'app-mealdeatils',
-  standalone: true,
-  imports: [],
-  templateUrl: './mealdeatils.component.html',
-  styleUrl: './mealdeatils.component.scss'
+    selector: 'app-mealdeatils',
+    imports: [],
+    templateUrl: './mealdeatils.component.html',
+    styleUrl: './mealdeatils.component.scss'
 })
 export class MealdeatilsComponent implements OnInit {
   meal:any;

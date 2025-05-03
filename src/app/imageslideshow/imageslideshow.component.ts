@@ -3,11 +3,10 @@ import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-imageslideshow',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './imageslideshow.component.html',
-  styleUrl: './imageslideshow.component.scss'
+    selector: 'app-imageslideshow',
+    imports: [FormsModule, CommonModule],
+    templateUrl: './imageslideshow.component.html',
+    styleUrl: './imageslideshow.component.scss'
 })
 export class ImageslideshowComponent implements OnInit, OnDestroy {
 

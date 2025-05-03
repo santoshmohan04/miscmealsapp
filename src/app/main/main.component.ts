@@ -3,11 +3,10 @@ import { ImageslideshowComponent } from '../imageslideshow/imageslideshow.compon
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [ImageslideshowComponent, RouterLink],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+    selector: 'app-main',
+    imports: [ImageslideshowComponent, RouterLink],
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.scss'
 })
 export class MainComponent {
 

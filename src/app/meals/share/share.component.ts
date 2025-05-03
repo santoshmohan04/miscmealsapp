@@ -5,11 +5,10 @@ import { mealsdata } from '../../mealsdata';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-share',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  templateUrl: './share.component.html',
-  styleUrl: './share.component.scss'
+    selector: 'app-share',
+    imports: [CommonModule, ReactiveFormsModule, RouterModule],
+    templateUrl: './share.component.html',
+    styleUrl: './share.component.scss'
 })
 export class ShareComponent implements OnInit {
   pickedImage:any = null;
