@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -24,8 +24,12 @@ export class ImageslideshowComponent implements OnInit, OnDestroy {
   currentImageIndex = 0;
   private intervalId!: number;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
     this.startSlideshow();
+    }
   }
 
   ngOnDestroy() {
