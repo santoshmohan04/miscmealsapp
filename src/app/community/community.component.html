@@ -8,19 +8,11 @@
     <h2>Community Perks</h2>
 
     <ul class="perks">
-      <li>
-        <img src="assets/icons/meal.png" alt="A delicious meal" />
-        <p>Share & discover recipes</p>
-      </li>
-      <li>
-        <img src="assets/icons/community.png" alt="A crowd of people, cooking" />
-        <p>Find new friends & like-minded people</p>
-      </li>
-      <li>
-        <img src="assets/icons/events.png"
-          alt="A crowd of people at a cooking event"
-        />
-        <p>Participate in exclusive events</p>
-      </li>
+      @for (item of perks; track $index) {
+        <li>
+          <img [src]="item.imgsrc" [alt]="item.comment" />
+          <p>{{item.title}}</p>
+        </li>
+      }
     </ul>
   </main>

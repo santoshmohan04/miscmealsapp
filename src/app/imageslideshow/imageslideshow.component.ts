@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-imageslideshow',
     imports: [FormsModule, CommonModule],
+    standalone: true,
     templateUrl: './imageslideshow.component.html',
     styleUrl: './imageslideshow.component.scss'
 })

@@ -26,12 +26,11 @@
 
     <nav class="nav">
       <ul>
+        @for (item of nav_data; track $index) {
         <li>
-          <a routerLink="/meals" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="link">Browse Meals</a>
+          <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="link">{{item.title}}</a>
         </li>
-        <li>
-          <a routerLink="/community" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="link">Foodies Community</a>
-        </li>
+      }
       </ul>
     </nav>
   </header>
