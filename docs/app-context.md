@@ -49,7 +49,7 @@
 - `rxjs`, `zone.js`
 - Testing: `karma`, `jasmine`
 
-## Upgradation Plan (high-level)
+## Upgrade Plan (high-level)
 1. Replace static `mealsdata` with a backend API and persistence layer.
 2. Add Angular HttpClient services for data access and caching.
 3. Introduce a global state solution (SignalStore/NgRx) for meals and user input.
