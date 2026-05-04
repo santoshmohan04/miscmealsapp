@@ -23,7 +23,7 @@
 - `/` – Home (MainComponent)
 - `/meals` – Meals list
 - `/meals/share` – Share meal form
-- `/meals/:id` – Meal details
+- `/meals/:id` – Meal details (slug value)
 - `/community` – Community perks
 
 ## APIs Integrated
@@ -33,7 +33,7 @@
 
 ## Required APIs (for full app workflow)
 - `GET /api/meals` – list meals for the `/meals` page.
-- `GET /api/meals/:slug` – meal details for `/meals/:id`.
+- `GET /api/meals/:id` – meal details for `/meals/:id` (id is a slug).
 - `POST /api/meals` – create a meal from the share form.
 - `POST /api/uploads/images` – upload an image and return a URL for storage.
 
