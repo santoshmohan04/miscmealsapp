@@ -31,6 +31,29 @@
 - Data is sourced from a static in-memory dataset (`mealsdata`).
 - Express server is used only for SSR (no REST endpoints implemented).
 
+## Required APIs (for full app workflow)
+- `GET /api/meals` – list meals for the `/meals` page.
+- `GET /api/meals/:slug` – meal details for `/meals/:id`.
+- `POST /api/meals` – create a meal from the share form.
+- `POST /api/uploads/images` – upload an image and return a URL for storage.
+
+## Data Models
+- **Meal**
+  - `title`: string
+  - `slug`: string
+  - `image`: string (asset path or data URL)
+  - `summary`: string
+  - `instructions`: string
+  - `creator`: string
+  - `creator_email`: string
+- **ShareMealForm**
+  - `name`: string
+  - `email`: string
+  - `title`: string
+  - `summary`: string
+  - `instructions`: string
+  - `image`: File
+
 ## Design Patterns / Architecture
 - Standalone Angular components with template-driven composition.
 - Router-driven feature separation (pages by route).
@@ -48,6 +71,13 @@
 - `@angular/ssr`, `express`
 - `rxjs`, `zone.js`
 - Testing: `karma`, `jasmine`
+
+## Feature Improvements Needed
+- Persist shared meals and fetch data from an API (replace in-memory push).
+- Generate stable, unique slugs and validate duplicates.
+- Add search, filters, sorting, and pagination to the meals list.
+- Add inline validation messages and success/error feedback for the share form.
+- Add image upload validation (file size/type) and fallback images.
 
 ## Upgrade Plan (high-level)
 1. Replace static `mealsdata` with a backend API and persistence layer.
